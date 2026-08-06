@@ -12,7 +12,7 @@ export const platformColor = {
 
 export const statusColor = {
   Planned: '#3B82F6',
-  'In review': '#F5B700',
+  'In Review': '#F5B700',
   Approved: '#16A34A',
   Published: '#6B7280',
 };
