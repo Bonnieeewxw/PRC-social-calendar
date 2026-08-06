@@ -141,12 +141,6 @@ function App() {
     await onSavePost({ ...post, publishDate: date });
   }
 
-  async function seedBackend() {
-    await seedSupabase();
-    await refresh();
-    setMessage('FY27 seed data loaded to Supabase');
-  }
-
   return (
     <div className="app-shell">
       <header className="topbar">
@@ -156,7 +150,7 @@ function App() {
         </div>
         <div className="top-actions">
           <button className="btn" onClick={() => exportCalendarWorkbook(data)}>Export Excel</button>
-          {isSupabaseConfigured && <button className="btn" onClick={seedBackend}>Load FY27 seed</button>}
+         
           <button className="btn primary" onClick={() => setEditingPost(defaultPost(toISODate(new Date())))}>+ New Post</button>
           <button className="btn" onClick={() => setEditingCampaign(defaultCampaign(toISODate(new Date())))}>+ New Campaign/Event</button>
         </div>
@@ -195,7 +189,7 @@ function App() {
               className={`day ${isOutside ? 'muted' : ''}`}
               onDragOver={(event) => event.preventDefault()}
               onDrop={() => dragPostId && movePostToDate(dragPostId, dateKey)}
-              onDoubleClick={() => setEditingPost(defaultPost(dateKey))}
+              onClick={() => setEditingPost(defaultPost(dateKey))}
             >
               <div className="date-label">{date.getMonth() + 1}/{date.getDate()}</div>
               {dayCampaigns.map((item) => <CampaignPill key={item.id} item={item} onClick={() => setEditingCampaign(item)} />)}
