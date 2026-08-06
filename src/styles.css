@@ -43,9 +43,10 @@ button { cursor:pointer; }
 .date-label { position:absolute; top:8px; right:10px; font-size:12px; color:#999; }
 .post-card { background:#fff; border-radius:10px; padding:10px; margin-top:28px; margin-bottom:8px; display:flex; flex-direction:column; cursor:grab; transition:transform .08s ease, box-shadow .08s ease; }
 .post-card:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(16,24,40,.08); }
-.post-card.draft { border-left:6px solid #f59e0b; }
-.post-card.pending { border-left:6px solid #7c3aed; }
-.post-card.published { border-left:6px solid #16a34a; }
+.post-card.planned { border-left:6px solid #3B82F6; }
+.post-card.in-review { border-left:6px solid #F5B700; }
+.post-card.approved { border-left:6px solid #16A34A; }
+.post-card.published { border-left:6px solid #6B7280; }
 .platforms { display:flex; gap:6px; margin-bottom:8px; align-items:center; flex-wrap:wrap; }
 .platforms span { font-size:11px; padding:4px 8px; border-radius:999px; color:#fff; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,.06); max-width:92px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .platforms .more { background:#eef2ff; color:#1e3a8a; }
