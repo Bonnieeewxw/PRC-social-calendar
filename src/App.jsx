@@ -259,7 +259,9 @@ function PlanningPanel({ campaigns, onEditCampaign }) {
 
 
 function PostCard({ post, onClick, onDragStart }) {
-  const statusClass = post.status === 'Published' ? 'published' : post.status === 'Drafting' ? 'draft' : 'pending';
+  const statusClass = post.status 
+.toLowerCase()
+.replace(/\s+/g, '-');
   return (
     <article className={`post-card ${statusClass}`} draggable onDragStart={onDragStart} onClick={onClick}>
       <div className="platforms">
