@@ -17,7 +17,7 @@ export const statusColor = {
   Published: '#6B7280',
 };
 
-export const statusLabels = ['Planned', 'In review', 'Approved', 'Published'];
+export const statusLabels = ['Planned', 'In Review', 'Approved', 'Published'];
 export const sourceLabels = ['Global - GMEE', 'Global - Other', 'Local - Locally Created', 'Local - PR', 'Local - Other'];
 export const objectiveLabels = ['Awareness', 'Consideration', 'Conversion'];
 export const csaLabels = ['AI Business Solutions', 'Cloud and AI Platform', 'Security', 'Non-Solution Area Aligned', 'X-CSA'];
