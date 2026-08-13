@@ -199,7 +199,7 @@ function PlanningPanel({ campaigns, onEditCampaign }) {
 function PostCard({ post, onClick, onDragStart }) {
   const statusClass = String(post.status || 'Planned').toLowerCase().replace(/\s+/g, '-');
   return <article className={`post-card ${statusClass}`} draggable onDragStart={onDragStart} onClick={onClick}>
-    <div className="platforms">{(post.platforms || []).slice(0,3).map((platform) => <span key={platform} style={{ background: platformColor[platform] || '#64748B' }}>{platform}</span>)}{(post.platforms || []).length > 3 && <span className="more">+{post.platforms.length - 3}</span>}</div>
+    <div className="platforms">{(post.platforms || []).slice(0,3).map((platform) => <span key={platform} style={platform === 'Toutiao'? { background: '#FFFFFF',color: '#D13438',border: '1px solid #D13438'}:{ background: platformColor[platform] || '#64748B' }}>{platform}</span>)}{(post.platforms || []).length > 3 && <span className="more">+{post.platforms.length - 3}</span>}</div>
     <strong>{post.title}</strong><div className="meta"><span className="tag csa">{post.csa}</span><span className="tag outcome">{post.objective}</span><span className="tag source">{post.sourceCategory}</span></div>
     {post.link && <a className="post-link" href={post.link} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>Open link</a>}
     <em style={{ background: statusColor[post.status] || '#8B5CF6' }}>{post.status}</em>
