@@ -181,7 +181,17 @@ function MetricCard({ title, subtitle, counts, labels, colors = {} }) {
 function PlanningPanel({ campaigns, onEditCampaign }) {
   return <section className="planning-row events-only"><div className="events-card"><div className="panel-head"><strong>Upcoming campaigns & events</strong></div><div className="event-list">
     {campaigns.slice().sort((a,b) => a.startDate.localeCompare(b.startDate)).slice(0,10).map((item) =>
-      <button key={item.id} className={`upcoming-campaign ${item.type === 'Event' ? 'event' : 'campaign'}`} onClick={() => onEditCampaign(item)}>
+    <button
+      key={item.id}
+      className={`upcoming-campaign ${
+        item.type === 'Holiday'
+         ? 'holiday'
+         : item.type === 'Event'
+          ? 'event'
+          : 'campaign'
+      }`}
+      onClick={() => onEditCampaign(item)}
+      >
         <strong>{item.title}</strong><span>{item.startDate} → {item.endDate}</span>
       </button>)}
   </div></div></section>;
