@@ -135,7 +135,6 @@ function App() {
           const isOutside = date.getMonth() !== viewDate.getMonth();
           return (
             <section key={dateKey} className={`day ${isOutside ? 'muted' : ''} ${isToday ? 'today' : ''}`}
-              >
               onDragOver={(event) => event.preventDefault()}
               onDrop={(event) => { event.stopPropagation(); if (dragPostId) movePostToDate(dragPostId, dateKey); }}
               onClick={() => setEditingPost(defaultPost(dateKey))}>
