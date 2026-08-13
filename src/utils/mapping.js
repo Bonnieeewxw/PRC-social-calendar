@@ -2,9 +2,9 @@ export const platformLabels = ['WeChat', 'WeChat Channels', 'Toutiao', 'Bilibili
 
 export const platformColor = {
   WeChat: '#107C10',
-  'WeChat Channels': '#5C8F18',
+  'WeChat Channels': '#D97706',
   Toutiao: '#D13438',
-  Bilibili: '#C239B3',
+  Bilibili: '#4FC3F7',
   Douyin: '#323130',
   RED: '#E30045',
   M365: '#7B61FF',
