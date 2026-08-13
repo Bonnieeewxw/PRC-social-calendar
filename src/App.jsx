@@ -137,7 +137,8 @@ function App() {
             <section key={dateKey} className={`day ${isOutside ? 'muted' : ''} ${isToday ? 'today' : ''}`}
               onDragOver={(event) => event.preventDefault()}
               onDrop={(event) => { event.stopPropagation(); if (dragPostId) movePostToDate(dragPostId, dateKey); }}
-              onClick={() => setEditingPost(defaultPost(dateKey))}>
+              onClick={() => setEditingPost(defaultPost(dateKey))}
+            >
               <div className="date-label">{date.getMonth() + 1}/{date.getDate()}</div>
               <div className="campaign-stack">
                 {weekCampaigns.map((item) => {
