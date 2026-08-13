@@ -121,6 +121,10 @@ function App() {
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => <div key={day} className="weekday">{day}</div>)}
         {calendarDays.map((date, index) => {
           const dateKey = toISODate(date);
+      
+          const todayKey = toISODate(new Date());
+          const isToday = dateKey === todayKey;
+      
           const weekStartIndex = Math.floor(index / 7) * 7;
           const weekStart = toISODate(calendarDays[weekStartIndex]);
           const weekEnd = toISODate(calendarDays[weekStartIndex + 6]);
@@ -130,7 +134,8 @@ function App() {
             .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.endDate.localeCompare(b.endDate) || a.title.localeCompare(b.title));
           const isOutside = date.getMonth() !== viewDate.getMonth();
           return (
-            <section key={dateKey} className={`day ${isOutside ? 'muted' : ''}`}
+            <section key={dateKey} className={`day ${isOutside ? 'muted' : ''} ${isToday ? 'today' : ''}`}
+              >
               onDragOver={(event) => event.preventDefault()}
               onDrop={(event) => { event.stopPropagation(); if (dragPostId) movePostToDate(dragPostId, dateKey); }}
               onClick={() => setEditingPost(defaultPost(dateKey))}>
