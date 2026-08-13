@@ -196,7 +196,7 @@ function PostCard({ post, onClick, onDragStart }) {
   </article>;
 }
 function CampaignPill({ item, segment = 'single', showTitle = true, onClick }) {
-  return <button className={`campaign-pill ${item.type === 'Event' ? 'event' : 'campaign'} segment-${segment}`} onClick={onClick} title={`${item.title} · ${item.startDate} to ${item.endDate}`}>
+  return <button className={`campaign-pill ${item.type === 'Holiday'? 'holiday': item.type === 'Event'? 'event': 'campaign'} segment-${segment}`} onClick={onClick} title={`${item.title} · ${item.startDate} to ${item.endDate}`}>
     <span className="campaign-title">{showTitle ? item.title : '\u00A0'}</span>
   </button>;
 }
@@ -224,7 +224,7 @@ function CampaignEditor({ item, onCancel, onSave, onDelete }) {
     <label>Title<input value={draft.title} onChange={(e) => setDraft({ ...draft, title: e.target.value })} /></label>
     <label>Start<input type="date" value={draft.startDate} onChange={(e) => setDraft({ ...draft, startDate: e.target.value })} /></label>
     <label>End<input type="date" value={draft.endDate} min={draft.startDate} onChange={(e) => setDraft({ ...draft, endDate: e.target.value })} /></label>
-    <label>Type<select value={draft.type} onChange={(e) => setDraft({ ...draft, type: e.target.value })}><option>Campaign</option><option>Event</option></select></label>
+    <label>Type<select value={draft.type} onChange={(e) => setDraft({ ...draft, type: e.target.value })}><option>Campaign</option><option>Event</option><option>Holiday</option></select></label>
     <label>Link<input value={draft.link || ''} onChange={(e) => setDraft({ ...draft, link: e.target.value })} placeholder="活动链接" /></label>
     <label>Notes<textarea value={draft.notes || ''} onChange={(e) => setDraft({ ...draft, notes: e.target.value })} /></label>
     <div className="modal-actions"><button className="danger" onClick={() => onDelete(draft.id)}>Delete</button><button onClick={onCancel}>Cancel</button><button className="primary" onClick={() => onSave({ ...draft, endDate: draft.endDate < draft.startDate ? draft.startDate : draft.endDate })}>Save</button></div>
