@@ -27,7 +27,7 @@ const defaultCampaign = (date) => ({
 function normalizeSearch(value) { return String(value || '').trim().toLowerCase(); }
 
 function App() {
-  const [viewDate, setViewDate] = useState(new Date(2026, 7, 1));
+  const [viewDate, setViewDate] = useState(new Date());
   const [data, setData] = useState({ posts: [], campaigns: [], monthlyPlans: [], mode: 'loading' });
   const [search, setSearch] = useState('');
   const [platformFilter, setPlatformFilter] = useState('All');
