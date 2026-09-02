@@ -1,7 +1,17 @@
 import * as XLSX from 'xlsx';
 
-export function exportCalendarWorkbook({ posts, campaigns, monthlyPlans }) {
-const postRows = posts.flatMap(p =>
+export function exportCalendarWorkbook({ posts, campaigns, monthlyPlans },viewDate) {
+const exportPosts = posts.filter((p) => {
+  if (!p.publishDate) return false;
+
+  const d = new Date(p.publishDate);
+
+  return (
+    d.getFullYear() === viewDate.getFullYear() &&
+    d.getMonth() === viewDate.getMonth()
+  );
+});
+const postRows = exportPosts.flatMap(p =>
   (p.platforms || []).map(platform => ({
     'Publish Date': p.publishDate,
     Title: p.title,
