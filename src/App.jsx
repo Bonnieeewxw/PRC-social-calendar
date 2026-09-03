@@ -100,7 +100,7 @@ function App() {
       <header className="topbar">
         <div><h1>PRC Social Calendar</h1><p>Bold Platform style · PRC organic social planning · realtime-ready</p></div>
         <div className="top-actions">
-          <button className="btn" onClick={() => exportCalendarWorkbook(data)}>Export Excel</button>
+          <button className="btn" onClick={() => exportCalendarWorkbook(data, viewDate)}>Export Excel</button>
           <button className="btn primary" onClick={() => setEditingPost(defaultPost(toISODate(new Date())))}>+ New Post</button>
           <button className="btn" onClick={() => setEditingCampaign(defaultCampaign(toISODate(new Date())))}>+ New Campaign/Event</button>
         </div>
