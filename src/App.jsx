@@ -225,7 +225,7 @@ function PostEditor({ post, onCancel, onSave, onDelete }) {
 
 const availableOutcomeLevel2 =
   outcomeLevel2Options[selectedOutcome] || [];
-
+const selectedOutcomeLevel2 = draft.outcomeLevel2 || availableOutcomeLevel2.find((item) => item.toLowerCase().replace(/-/g, '').replace(/\s/g, '') === String(draft.objective || '').toLowerCase().replace(/–/g, '').replace(/-/g, '').replace(/\s/g, '')) || '';
   function togglePlatform(platform) { const exists = draft.platforms?.includes(platform); setDraft({ ...draft, platforms: exists ? draft.platforms.filter((p) => p !== platform) : [...(draft.platforms || []), platform] }); }
   return <Modal title="Edit Post" onCancel={onCancel}>
     <label>Headline<input value={draft.title} onChange={(e) => setDraft({ ...draft, title: e.target.value })} /></label>
@@ -234,7 +234,7 @@ const availableOutcomeLevel2 =
     <label>Owner<input value={draft.owner || ''} onChange={(e) => setDraft({ ...draft, owner: e.target.value })} /></label>
     <label>CSA<select value={draft.csa} onChange={(e) => setDraft({ ...draft, csa: e.target.value })}>{csaLabels.map(v => <option key={v}>{v}</option>)}</select></label>
     <label>Outcome<select value={selectedOutcome} onChange={(e) => { const nextOutcome = e.target.value; setDraft({ ...draft, outcome: nextOutcome, outcomeLevel2: '', objective: nextOutcome }); }}><option value="">Select Outcome</option>{outcomeOptions.map((v) => <option key={v} value={v}>{v}</option>)}</select></label>
-    {availableOutcomeLevel2.length > 0 && <label>Outcome Level 2<select value={draft.outcomeLevel2 || ''} onChange={(e) => { const nextLevel2 = e.target.value; setDraft({ ...draft, outcomeLevel2: nextLevel2, objective: nextLevel2 }); }}><option value="">Select Outcome Level 2</option>{availableOutcomeLevel2.map((v) => <option key={v} value={v}>{v}</option>)}</select></label>}
+    {availableOutcomeLevel2.length > 0 && <label>Outcome Level 2<select value={selectedOutcomeLevel2} onChange={(e) => { const nextLevel2 = e.target.value; setDraft({ ...draft, outcomeLevel2: nextLevel2, objective: nextLevel2 }); }}><option value="">Select Outcome Level 2</option>{availableOutcomeLevel2.map((v) => <option key={v} value={v}>{v}</option>)}</select></label>}
     <label>Content Source<select value={draft.sourceCategory} onChange={(e) => setDraft({ ...draft, sourceCategory: e.target.value })}>{sourceLabels.map(v => <option key={v}>{v}</option>)}</select></label>
     <label>Status<select value={draft.status} onChange={(e) => setDraft({ ...draft, status: e.target.value })}>{statusLabels.map(v => <option key={v}>{v}</option>)}</select></label>
     <label>Campaign<input value={draft.campaign || ''} onChange={(e) => setDraft({ ...draft, campaign: e.target.value })} /></label>
