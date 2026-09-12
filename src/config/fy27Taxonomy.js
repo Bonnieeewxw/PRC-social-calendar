@@ -1,5 +1,3 @@
-// FY27 taxonomy configuration
-
 export const outcomeOptions = [
   'Awareness',
   'Consideration',
@@ -32,3 +30,15 @@ export const outcomeLevel2Options = {
   'PLACEHOLDER (PENDING)': [],
 };
 ``
+
+export const csaOptions = ['Cloud and AI Platforms', 'Security', 'AI Business Solutions', 'GitHub', 'Non-Solution Area Aligned', 'Windows and Devices', 'Cross Solution Area Aligned'];
+
+export const marketingPlayOptions = {
+  'Cloud and AI Platforms': ['Cloud and AI Platforms -Amplify Your Intelligence', 'Cloud and AI Platforms-Build a Unified, Governed Data and AI Estate', 'Cloud and AI Platforms-Modernize with Confidence', 'Cloud and AI Platforms-Ubiquitous Innovation', 'Cloud and AI Platforms-Sovereignty', 'Cloud and AI Platforms-Azure Account', 'Cloud and AI Platforms-Azure Account Trial', 'Cloud and AI Platforms-Azure Narrative'],
+  'Security': ['Security-Establish a Trusted and Secure Platform for AI', 'Security-CISO', 'Security-Security Contact Me', 'Security-Security SMB'],
+  'AI Business Solutions': ['AIBS-Agentify Your Business Processes', 'AIBS-AI in the Flow of Human Ambition', 'AIBS-AI-Ready Productivity and Security for Every Employee', 'AIBS-Dynamics 365 Contact Me', 'AIBS-Microsoft 365 Contact Me', 'AIBS-AI Business Solutions SMB', 'AIBS-Copilot Studio Trials', 'AIBS-Power BI'],
+  'GitHub': ['GitHub-Github Accelerate', 'GitHub-Github Security'],
+  'Windows and Devices': ['Windows and Devices-AI Transformation with Surface and Copilot', 'Windows and Devices-Surface Contact Me'],
+  'Non-Solution Area Aligned': ['AI Opportunity', 'Business Applications', 'Compliant Ecosystem', 'Data and AI', 'Developer', 'Digital and App Innovation', 'Eval Center', 'Infrastructure', 'Marketplace Reach', 'Microsoft Research', 'Modern Work', 'Partner with MS', 'Secure Ecosystem', 'Software Development Company', 'Surface Devices', 'Windows OEM Devices', 'N/A'],
+  'Cross Solution Area Aligned': ['Frontier Transformation', 'Education K12', 'Government', 'Healthcare Dragon Copilot'],
+};
