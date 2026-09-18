@@ -26,7 +26,7 @@ function toDbPost(post) {
     csa: post.csa || '',
     marketing_play: post.marketingPlay || '',
     outcome: post.outcome || '',
-    outcome_level2: post.outcome_level2 || '', 
+    outcome_level2: post.outcomeLevel2 || (post.objective && post.objective !== post.outcome ? post.objective : '') || '',
     objective: post.objective || '',
     source_category: post.sourceCategory || '',
     campaign: post.campaign || '',
