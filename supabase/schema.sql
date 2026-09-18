@@ -8,6 +8,7 @@ create table if not exists public.posts (
   platforms text[] default '{}',
   owner text default '',
   csa text default '',
+  marketing_play text default '',
   objective text default '',
   source_category text default '',
   campaign text default '',
