@@ -29,7 +29,6 @@ export const outcomeLevel2Options = {
 
   'PLACEHOLDER (PENDING)': [],
 };
-``
 
 export const csaOptions = ['Cloud and AI Platforms', 'Security', 'AI Business Solutions', 'GitHub', 'Non-Solution Area Aligned', 'Windows and Devices', 'Cross Solution Area Aligned'];
 
