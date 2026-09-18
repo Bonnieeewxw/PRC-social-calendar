@@ -9,6 +9,8 @@ create table if not exists public.posts (
   owner text default '',
   csa text default '',
   marketing_play text default '',
+  outcome text default '',
+  outcome_level2 text default '',
   objective text default '',
   source_category text default '',
   campaign text default '',
