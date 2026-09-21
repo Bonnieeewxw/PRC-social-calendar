@@ -126,3 +126,19 @@ export const eventNameOptions = {
 
   'Not Aligned to an Event': [],
 };
+
+export const audienceLevel2Options = [
+  'BDMs',
+  'BDMs, Information Workers',
+  'CISU, Security Practitioners',
+  'Citizen Developers',
+  'Clinicians, Radiologists',
+  'Data Professionals',
+  'Developers',
+  'Education ITEDU, HighEd',
+  'Healthcare - Payor',
+  'Information Workers',
+  'ITDMs',
+  'MedTech/Pharma',
+  'Students',
+];
