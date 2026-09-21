@@ -125,7 +125,15 @@ function App() {
 
       <Dashboard posts={monthPosts} />
       <PlanningPanel campaigns={monthCampaigns} onEditCampaign={setEditingCampaign} />
-
+      <div className="csa-legend">
+        <strong>CSA</strong>
+        {Object.entries(csaColor).filter(([label]) => !['Cloud and AI Platform', 'X-CSA', 'Others'].includes(label)).map(([label, color]) => (
+          <span key={label}>
+            <i style={{ background: color }}></i>
+            {label}
+          </span>
+        ))}
+      </div>
       <main className="calendar-grid">
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => <div key={day} className="weekday">{day}</div>)}
         {calendarDays.map((date, index) => {
