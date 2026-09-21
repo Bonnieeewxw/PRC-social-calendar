@@ -22,7 +22,7 @@ import { momentOptions, momentLevel2Options } from './config/fy27Taxonomy';
 import { urlContentTypeOptions, urlContentTypeLevel2Options } from './config/fy27Taxonomy';
 import { contentThemeOptions, teamSpecificTagOptions, eeMomentsCampaignOptions } from './config/fy27Taxonomy';
 const defaultPost = (date) => ({
-  id: crypto.randomUUID(), publishDate: date, title: '', platforms: ['WeChat'], owner: '',
+  id: crypto.randomUUID(), publishDate: date, title: '', platforms: ['WeChat'],
   csa: 'AI Business Solutions', marketingPlay: '', eventWorkstream: '', eventMktg: 'Not Aligned to an Event', eventName: '', objective: 'Consideration', outcome: 'Consideration', outcomeLevel2: '', sourceCategory: 'Local - Locally Created',
   originalAssetLink: '', finalAssetLink: '', notes: '',
 });
@@ -243,7 +243,6 @@ const selectedOutcomeLevel2 = draft.outcomeLevel2 || availableOutcomeLevel2.find
     <label className="full-width">Headline<input value={draft.title} onChange={(e) => setDraft({ ...draft, title: e.target.value })} /></label>
     <label>Date<input type="date" value={draft.publishDate} onChange={(e) => setDraft({ ...draft, publishDate: e.target.value })} /></label>
     <div className="check-row full-width">{platformLabels.map((p) => <label key={p}><input type="checkbox" checked={draft.platforms?.includes(p)} onChange={() => togglePlatform(p)} />{p}</label>)}</div>
-    <label>Owner<input value={draft.owner || ''} onChange={(e) => setDraft({ ...draft, owner: e.target.value })} /></label>
     <label>CSA<select value={draft.csa || ''} onChange={(e) => setDraft({ ...draft, csa: e.target.value, marketingPlay: '' })}>{csaOptions.map(v => <option key={v}>{v}</option>)}</select></label>    
     <label>Marketing Play<select value={draft.marketingPlay || ''} onChange={(e) => setDraft({ ...draft, marketingPlay: e.target.value })}><option value="">Select Marketing Play</option>{(marketingPlayOptions[draft.csa] || []).map(v => <option key={v}>{v}</option>)}</select></label>
     <label>Event Workstream<select value={draft.eventWorkstream || ''} onChange={(e) => setDraft({ ...draft, eventWorkstream: e.target.value })}><option value="">Select Event Workstream</option>{eventWorkstreamOptions.map(v => <option key={v} value={v}>{v}</option>)}</select></label>
