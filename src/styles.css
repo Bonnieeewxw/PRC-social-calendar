@@ -81,3 +81,6 @@ font-weight: 600;
   min-width:0;
   width:100%;
 }
+.post-editor-grid .full-width{
+  grid-column:1 / -1;
+}
