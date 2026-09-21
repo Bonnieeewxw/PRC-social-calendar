@@ -184,13 +184,13 @@ function App() {
 
 function Dashboard({ posts }) {
   return <section className="dashboard">
-    <MetricCard title="CSA" subtitle="Monthly post distribution" counts={countBy(posts, 'csa')} labels={csaOptions} colors={csaColor} />
-    <MetricCard title="Content Source" subtitle="按来源分类" counts={countBy(posts, 'sourceCategory')} labels={sourceLabels} />
-    <MetricCard title="Outcome" subtitle="按目标分类" counts={countBy(posts, 'objective')} labels={objectiveLabels} />
+    <MetricCard title="CSA" subtitle="Monthly post distribution" counts={countBy(posts, 'csa')} labels={csaOptions} colors={csaColor} totalCount={posts.length}/>
+    <MetricCard title="Content Source" subtitle="按来源分类" counts={countBy(posts, 'sourceCategory')} labels={sourceLabels} totalCount={posts.length}/>
+    <MetricCard title="Outcome" subtitle="按目标分类" counts={countBy(posts, 'outcome')} labels={outcomeOptions} totalCount={posts.length}/>
   </section>;
 }
-function MetricCard({ title, subtitle, counts, labels, colors = {} }) {
-  const total = labels.reduce((sum, label) => sum + (counts[label] || 0), 0);
+function MetricCard({ title, subtitle, counts, labels, colors = {}, totalCount }) {
+  const total = totalCount ?? labels.reduce((sum, label) => sum + (counts[label] || 0), 0);444
   return <div className="metric-card"><div className="card-head"><div><strong>{title}</strong><span>{subtitle}</span></div><b>{total}</b></div>
     {labels.map((label, index) => { const count = counts[label] || 0; const pct = Math.round(count / Math.max(1, total) * 100); const color = colors[label] || ['#60A5FA','#8B5CF6','#F59E0B','#34D399','#FB7185'][index % 5]; return <div className="metric-row" key={label}><span title={label}>{label}</span><b>{count}</b><div className="bar"><i style={{ width: `${pct}%`, background: color }} /></div><em>{pct}%</em></div>; })}
   </div>;
