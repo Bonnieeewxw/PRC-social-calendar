@@ -20,4 +20,14 @@ export const statusColor = {
 export const statusLabels = ['Planned', 'In Review', 'Approved', 'Published'];
 export const sourceLabels = ['Global - GMEE', 'Global - Other', 'Local - Locally Created', 'Local - PR', 'Local - Other'];
 export const objectiveLabels = ['Awareness', 'Consideration', 'Conversion'];
-export const csaLabels = ['AI Business Solutions', 'Cloud and AI Platform', 'Security', 'Non-Solution Area Aligned', 'X-CSA'];
+export const csaLabels = ['AI Business Solutions', 'Cloud and AI Platform', 'Security', 'Non-Solution Area Aligned', 'Cross Solution Area Aligned', 'GitHub', 'Windows and Devices'];
+export const csaColor = {
+  'Cloud and AI Platform': '#2563EB',
+  'Cloud and AI Platforms': '#2563EB',
+  'AI Business Solutions': '#7C3AED',
+  'Security': '#16A34A',
+  'GitHub': '#D97706',
+  'Windows and Devices': '#DB2777',
+  'Cross Solution Area Aligned': '#EA580C',
+  'Non-Solution Area Aligned': '#94A3B8',
+};
