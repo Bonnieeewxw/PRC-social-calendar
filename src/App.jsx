@@ -24,7 +24,7 @@ import { contentThemeOptions, teamSpecificTagOptions, eeMomentsCampaignOptions }
 const defaultPost = (date) => ({
   id: crypto.randomUUID(), publishDate: date, title: '', platforms: ['WeChat'], owner: '',
   csa: 'AI Business Solutions', marketingPlay: '', eventWorkstream: '', eventMktg: 'Not Aligned to an Event', eventName: '', objective: 'Consideration', outcome: 'Consideration', outcomeLevel2: '', sourceCategory: 'Local - Locally Created',
-  campaign: '', status: 'Planned', notes: '', link: '',
+  originalAssetLink: '', finalAssetLink: '', notes: '',
 });
 
 const defaultCampaign = (date) => ({
@@ -253,9 +253,8 @@ const selectedOutcomeLevel2 = draft.outcomeLevel2 || availableOutcomeLevel2.find
     <label>Outcome<select value={selectedOutcome} onChange={(e) => { const nextOutcome = e.target.value; setDraft({ ...draft, outcome: nextOutcome, outcomeLevel2: '', objective: nextOutcome }); }}><option value="">Select Outcome</option>{outcomeOptions.map((v) => <option key={v} value={v}>{v}</option>)}</select></label>
     {availableOutcomeLevel2.length > 0 && <label>Outcome Level 2<select value={selectedOutcomeLevel2} onChange={(e) => { const nextLevel2 = e.target.value; setDraft({ ...draft, outcomeLevel2: nextLevel2, objective: nextLevel2 }); }}><option value="">Select Outcome Level 2</option>{availableOutcomeLevel2.map((v) => <option key={v} value={v}>{v}</option>)}</select></label>}
     <label>Content Source<select value={draft.sourceCategory} onChange={(e) => setDraft({ ...draft, sourceCategory: e.target.value })}>{sourceLabels.map(v => <option key={v}>{v}</option>)}</select></label>
-    <label>Status<select value={draft.status} onChange={(e) => setDraft({ ...draft, status: e.target.value })}>{statusLabels.map(v => <option key={v}>{v}</option>)}</select></label>
-    <label>Campaign<input value={draft.campaign || ''} onChange={(e) => setDraft({ ...draft, campaign: e.target.value })} /></label>
-    <label>Link<input value={draft.link || ''} onChange={(e) => setDraft({ ...draft, link: e.target.value })} placeholder="素材链接 / 发布链接" /></label>
+    <label>Original Asset Link<input value={draft.originalAssetLink || ''} onChange={(e) => setDraft({ ...draft, originalAssetLink: e.target.value })} placeholder="Source article, brief or original asset" /></label>
+    <label>Final Asset Link<input value={draft.finalAssetLink || ''} onChange={(e) => setDraft({ ...draft, finalAssetLink: e.target.value })} placeholder="Final copy, video or approved asset" /></label>
     <label>Notes<textarea value={draft.notes || ''} onChange={(e) => setDraft({ ...draft, notes: e.target.value })} /></label>
     <div className="modal-actions"><button className="danger" onClick={() => onDelete(draft.id)}>Delete</button><button onClick={onCancel}>Cancel</button><button className="primary" onClick={() => onSave(draft)}>Save</button></div>
   </Modal>;
