@@ -15,6 +15,8 @@ create table if not exists public.posts (
   audience_level2 text default '',
   moment text default '',
   moment_level2 text default '',
+  url_content_type text default '',
+  url_content_type_level2 text default '',
   outcome text default '',
   outcome_level2 text default '',
   objective text default '',
