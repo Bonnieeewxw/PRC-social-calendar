@@ -184,7 +184,7 @@ function App() {
 
 function Dashboard({ posts }) {
   return <section className="dashboard">
-    <MetricCard title="Posts" subtitle="Month overview" counts={countBy(posts, 'status')} labels={statusLabels} colors={statusColor} />
+    <MetricCard title="CSA" subtitle="Monthly post distribution" counts={countBy(posts, 'csa')} labels={csaOptions} colors={csaColor} />
     <MetricCard title="Content Source" subtitle="按来源分类" counts={countBy(posts, 'sourceCategory')} labels={sourceLabels} />
     <MetricCard title="Outcome" subtitle="按目标分类" counts={countBy(posts, 'objective')} labels={objectiveLabels} />
   </section>;
