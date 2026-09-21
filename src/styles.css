@@ -84,3 +84,19 @@ font-weight: 600;
 .post-editor-grid .full-width{
   grid-column:1 / -1;
 }
+.editor-section-title{
+  grid-column:1 / -1;
+  font-size:12px;
+  font-weight:700;
+  color:#2563eb;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  padding:12px 0 6px;
+  margin-top:4px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.editor-section-title:first-child{
+  padding-top:0;
+  margin-top:0;
+}
