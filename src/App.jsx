@@ -17,6 +17,7 @@ import {
 import { getCalendarDays, monthKey, monthLabel, overlapsMonth, toISODate } from './utils/date';
 import { csaOptions, marketingPlayOptions } from './config/fy27Taxonomy';
 import { eventWorkstreamOptions, eventMktgOptions, eventNameOptions } from './config/fy27Taxonomy';
+import { audienceLevel2Options } from './config/fy27Taxonomy';
 const defaultPost = (date) => ({
   id: crypto.randomUUID(), publishDate: date, title: '', platforms: ['WeChat'], owner: '',
   csa: 'AI Business Solutions', marketingPlay: '', eventWorkstream: '', eventMktg: 'Not Aligned to an Event', eventName: '', objective: 'Consideration', outcome: 'Consideration', outcomeLevel2: '', sourceCategory: 'Local - Locally Created',
@@ -238,6 +239,7 @@ const selectedOutcomeLevel2 = draft.outcomeLevel2 || availableOutcomeLevel2.find
     <label>Event Workstream<select value={draft.eventWorkstream || ''} onChange={(e) => setDraft({ ...draft, eventWorkstream: e.target.value })}><option value="">Select Event Workstream</option>{eventWorkstreamOptions.map(v => <option key={v} value={v}>{v}</option>)}</select></label>
     <label>Event (Mktg)<select value={draft.eventMktg || ''} onChange={(e) => setDraft({ ...draft, eventMktg: e.target.value, eventName: '' })}><option value="">Select Event</option>{eventMktgOptions.map(v => <option key={v} value={v}>{v}</option>)}</select></label>
     {draft.eventMktg && draft.eventMktg !== 'Not Aligned to an Event' && <label>Event Name<select value={draft.eventName || ''} onChange={(e) => setDraft({ ...draft, eventName: e.target.value })}><option value="">Select Event Name</option>{(eventNameOptions[draft.eventMktg] || []).map(v => <option key={v} value={v}>{v}</option>)}</select></label>}
+    <label>Audience (2nd Level)<select value={draft.audienceLevel2 || ''} onChange={(e) => setDraft({ ...draft, audienceLevel2: e.target.value })}><option value="">Select Audience</option>{audienceLevel2Options.map(v => <option key={v} value={v}>{v}</option>)}</select></label>
     <label>Outcome<select value={selectedOutcome} onChange={(e) => { const nextOutcome = e.target.value; setDraft({ ...draft, outcome: nextOutcome, outcomeLevel2: '', objective: nextOutcome }); }}><option value="">Select Outcome</option>{outcomeOptions.map((v) => <option key={v} value={v}>{v}</option>)}</select></label>
     {availableOutcomeLevel2.length > 0 && <label>Outcome Level 2<select value={selectedOutcomeLevel2} onChange={(e) => { const nextLevel2 = e.target.value; setDraft({ ...draft, outcomeLevel2: nextLevel2, objective: nextLevel2 }); }}><option value="">Select Outcome Level 2</option>{availableOutcomeLevel2.map((v) => <option key={v} value={v}>{v}</option>)}</select></label>}
     <label>Content Source<select value={draft.sourceCategory} onChange={(e) => setDraft({ ...draft, sourceCategory: e.target.value })}>{sourceLabels.map(v => <option key={v}>{v}</option>)}</select></label>
