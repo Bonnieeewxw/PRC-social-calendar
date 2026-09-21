@@ -35,3 +35,32 @@ font-weight: 600;
   background: #fff8e6;
   box-shadow: 0 0 8px rgba(245,158,11,.3);
 }
+.csa-legend{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px 16px;
+  margin:8px 0 4px;
+  padding:8px 10px;
+  font-size:11px;
+  color:#64748b;
+}
+
+.csa-legend strong{
+  color:#334155;
+  font-size:12px;
+}
+
+.csa-legend span{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  white-space:nowrap;
+}
+
+.csa-legend i{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  display:inline-block;
+}
