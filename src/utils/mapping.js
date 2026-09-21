@@ -26,7 +26,7 @@ export const csaColor = {
   'Cloud and AI Platforms': '#2563EB',
   'AI Business Solutions': '#7C3AED',
   'Security': '#16A34A',
-  'GitHub': '#D97706',
+  'GitHub': '#374151',
   'Windows and Devices': '#DB2777',
   'Cross Solution Area Aligned': '#EA580C',
   'Non-Solution Area Aligned': '#94A3B8',
