@@ -142,3 +142,48 @@ export const audienceLevel2Options = [
   'MedTech/Pharma',
   'Students',
 ];
+export const momentOptions = [
+  'Product',
+  'Campaign',
+  'Reactive',
+  'Event',
+  'Comms',
+  'Evergreen',
+];
+
+export const momentLevel2Options = {
+  Product: [
+    'Launch',
+    'Update',
+  ],
+
+  Campaign: [
+    'Copilot advertising campaign',
+    'Windows advertising campaign',
+    'Azure advertising campaign',
+    'Employee campaign',
+    'E&E Growth campaigns',
+    'Other',
+  ],
+
+  Reactive: [
+    'Trend',
+    'Crisis management',
+    'Always on reactive',
+  ],
+
+  Event: [
+    '1st party event',
+    '3rd party event',
+    'Cultural',
+    'Wall of Fame',
+  ],
+
+  Comms: [
+    'Company news/press release',
+    'Partnerships',
+    'Crisis management',
+  ],
+
+  Evergreen: [],
+};
