@@ -13,6 +13,8 @@ create table if not exists public.posts (
   event_mktg text default '',
   event_name text default '',
   audience_level2 text default '',
+  moment text default '',
+  moment_level2 text default '',
   outcome text default '',
   outcome_level2 text default '',
   objective text default '',
