@@ -28,6 +28,8 @@ create table if not exists public.posts (
   status text default 'Planned',
   notes text default '',
   link text default '',
+  original_asset_link text default '',
+  final_asset_link text default '',
   updated_at timestamptz default now()
 );
 
