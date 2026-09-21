@@ -187,3 +187,75 @@ export const momentLevel2Options = {
 
   Evergreen: [],
 };
+
+export const urlContentTypeOptions = [
+  'Video',
+  'Blog',
+  'Long-Form',
+  'Learning & Support',
+  'Engagement / Interaction',
+  'Web',
+  "Post doesn't link to a URL",
+];
+
+export const urlContentTypeLevel2Options = {
+  Video: [
+    'YouTube',
+    'Webinar (Live)',
+    'Webinar (On Demand)',
+    'Demo',
+    'Live Stream',
+    'Reel',
+  ],
+
+  Blog: [
+    'Official Microsoft Blog',
+    'Tech Community Blog',
+    'Microsoft Source Blog (News Center)',
+    'Cloud Marketing Blog',
+    'Official Developer Blog',
+    'Microsoft Education Blog',
+    'Command Line Blog',
+    'Microsoft Dev Blog',
+    'Microsoft Azure Blog',
+    'Microsoft 365 Blog',
+  ],
+
+  'Long-Form': [
+    'Customer Story',
+    'White Paper',
+    'E-book',
+    'Infographic',
+    'How-To',
+    'Third-Party Report',
+    'Campaign',
+    'Announcement',
+    'Podcast',
+    'Analyst Report',
+    'First-Party Report',
+  ],
+
+  'Learning & Support': [
+    'Learning Course / Series',
+    'Documentation',
+    'Support Center',
+    'Community Forums',
+    'GitHub',
+    'Plans on Learn',
+    'Trial',
+  ],
+
+  'Engagement / Interaction': [
+    'Survey',
+    'Contest',
+    'Holiday Engagement',
+    'Ad hoc',
+  ],
+
+  Web: [
+    'Landing Page',
+    'Registration Page',
+  ],
+
+  "Post doesn't link to a URL": [],
+};
