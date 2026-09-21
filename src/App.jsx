@@ -9,7 +9,7 @@ import {
   savePost,
   subscribeToRealtime,
 } from './lib/dataStore';
-import { csaLabels, objectiveLabels, platformColor, platformLabels, sourceLabels, statusColor, statusLabels } from './utils/mapping';
+import { csaLabels, objectiveLabels, platformColor, platformLabels, sourceLabels, statusColor, statusLabels, csaColor } from './utils/mapping';
 import {
   outcomeOptions,
   outcomeLevel2Options,
@@ -206,10 +206,9 @@ function PlanningPanel({ campaigns, onEditCampaign }) {
   </div></div></section>;
 }
 function PostCard({ post, onClick, onDragStart }) {
-  const statusClass = String(post.status || 'Planned').toLowerCase().replace(/\s+/g, '-');
-  return <article className={`post-card ${statusClass}`} draggable onDragStart={onDragStart} onClick={onClick}>
+  return <article className="post-card" style={{ borderLeft: `6px solid ${csaColor[post.csa] || '#94A3B8'}` }} draggable onDragStart={onDragStart} onClick={onClick}>
     <div className="platforms">{(post.platforms || []).slice(0,3).map((platform) => <span key={platform} style={platform === 'Toutiao'? { background: '#FFFFFF',color: '#D13438',border: '1px solid #D13438'}:{ background: platformColor[platform] || '#64748B' }}>{platform}</span>)}{(post.platforms || []).length > 3 && <span className="more">+{post.platforms.length - 3}</span>}</div>
-    <strong>{post.title}</strong><div className="meta"><span className="tag csa">{post.csa}</span><span className="tag outcome">{post.objective}</span><span className="tag source">{post.sourceCategory}</span></div>
+    <strong>{post.title}</strong><div className="meta"><span className="tag outcome">{post.objective}</span><span className="tag source">{post.sourceCategory}</span></div>
     {post.link && <a className="post-link" href={post.link} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>Open link</a>}
     <em style={{ background: statusColor[post.status] || '#8B5CF6' }}>{post.status}</em>
   </article>;
