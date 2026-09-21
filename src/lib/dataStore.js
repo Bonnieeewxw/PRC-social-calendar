@@ -40,10 +40,9 @@ function toDbPost(post) {
     outcome_level2: post.outcomeLevel2 || (post.objective && post.objective !== post.outcome ? post.objective : '') || '',
     objective: post.objective || '',
     source_category: post.sourceCategory || '',
-    campaign: post.campaign || '',
-    status: post.status || 'Planned',
     notes: post.notes || '',
-    link: post.link || '',
+    original_asset_link: post.originalAssetLink || post.link || '',
+    final_asset_link: post.finalAssetLink || '',
   };
 }
 function fromDbPost(row) {
@@ -70,10 +69,9 @@ function fromDbPost(row) {
     outcomeLevel2: row.outcome_level2 || '',
     objective: row.objective || '',
     sourceCategory: row.source_category || '',
-    campaign: row.campaign || '',
-    status: row.status || 'Planned',
     notes: row.notes || '',
-    link: row.link || '',
+    originalAssetLink: row.original_asset_link || row.link || '',
+    finalAssetLink: row.final_asset_link || '',
   };
 }
 function toDbCampaign(item) {
