@@ -265,7 +265,7 @@ const selectedOutcomeLevel2 = draft.outcomeLevel2 || availableOutcomeLevel2.find
     <div className="editor-section-title">Links & Notes</div>
     <label>Original Asset Link<input value={draft.originalAssetLink || ''} onChange={(e) => setDraft({ ...draft, originalAssetLink: e.target.value })} placeholder="Source article, brief or original asset" /></label>
     <label>Final Asset Link<input value={draft.finalAssetLink || ''} onChange={(e) => setDraft({ ...draft, finalAssetLink: e.target.value })} placeholder="Final copy, video or approved asset" /></label>
-    <label>Notes<textarea value={draft.notes || ''} onChange={(e) => setDraft({ ...draft, notes: e.target.value })} /></label>
+    <label className="full-width">Notes<textarea value={draft.notes || ''} onChange={(e) => setDraft({ ...draft, notes: e.target.value })} /></label>
     </div>
     <div className="modal-actions"><button className="danger" onClick={() => onDelete(draft.id)}>Delete</button><button onClick={onCancel}>Cancel</button><button className="primary" onClick={() => onSave(draft)}>Save</button></div>
   </Modal>;
