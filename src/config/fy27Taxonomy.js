@@ -259,3 +259,36 @@ export const urlContentTypeLevel2Options = {
 
   "Post doesn't link to a URL": [],
 };
+
+export const contentThemeOptions = [
+  'Asia | Customer Stories',
+  'Asia | Copilot Cowork',
+  'Asia | Copilot Chat',
+  'Asia | Copilot Agents',
+  'Asia | Internal Initiatives',
+  'Asia | Social Trends',
+  'Asia | Brand Love Moments',
+  'Asia | Influencer Partnerships',
+  'Asia | Skilling',
+  'Asia | Social Impact',
+];
+
+export const teamSpecificTagOptions = [
+  'ASIA_ Flagship Moments',
+  'ASIA_ Copilot, Agents & Security',
+  'ASIA_ Cultural Moments',
+  'ASIA_ Regional - Regionally Created',
+];
+
+export const eeMomentsCampaignOptions = [
+  'Cybersecurity Awareness Month',
+  'Frontier Transformation - VM',
+  'Model Drops/Updates',
+  'WTI FY2Y',
+  'Retail Empower Campaign',
+  'AI for Better Health',
+  'AI Blueprint',
+  'Test & Invest',
+  'Nurses Week',
+  'Agentic Security Moment',
+];
