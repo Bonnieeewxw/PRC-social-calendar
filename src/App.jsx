@@ -190,7 +190,7 @@ function Dashboard({ posts }) {
   </section>;
 }
 function MetricCard({ title, subtitle, counts, labels, colors = {}, totalCount }) {
-  const total = totalCount ?? labels.reduce((sum, label) => sum + (counts[label] || 0), 0);444
+  const total = totalCount ?? labels.reduce((sum, label) => sum + (counts[label] || 0), 0);
   return <div className="metric-card"><div className="card-head"><div><strong>{title}</strong><span>{subtitle}</span></div><b>{total}</b></div>
     {labels.map((label, index) => { const count = counts[label] || 0; const pct = Math.round(count / Math.max(1, total) * 100); const color = colors[label] || ['#60A5FA','#8B5CF6','#F59E0B','#34D399','#FB7185'][index % 5]; return <div className="metric-row" key={label}><span title={label}>{label}</span><b>{count}</b><div className="bar"><i style={{ width: `${pct}%`, background: color }} /></div><em>{pct}%</em></div>; })}
   </div>;
